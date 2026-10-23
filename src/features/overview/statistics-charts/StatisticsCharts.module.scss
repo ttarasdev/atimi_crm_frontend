@@ -1,0 +1,74 @@
+.chart {
+    width: 100%;
+    min-width: 0;
+    height: 270px;
+}
+.compact {
+    height: 210px;
+}
+.figure {
+    margin: 0;
+    min-width: 0;
+}
+.summary {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+.empty {
+    min-height: 200px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 7px;
+    border: 1px dashed var(--line);
+    border-radius: 10px;
+    padding: 18px;
+    strong {
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 500;
+    }
+    span {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.5;
+    }
+}
+.compactEmpty {
+    min-height: 140px;
+}
+.data {
+    margin-top: 8px;
+    font-size: 11px;
+    summary {
+        color: var(--primary);
+        cursor: pointer;
+        width: fit-content;
+        padding: 4px 0;
+    }
+    > div {
+        margin-top: 6px;
+        overflow-x: auto;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 11px;
+    }
+    th,
+    td {
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        padding: 7px;
+        overflow-wrap: anywhere;
+    }
+    th {
+        color: var(--muted);
+        font-weight: 500;
+    }
+    td {
+        color: var(--ink);
+    }
+}

@@ -1,0 +1,144 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    h1 {
+        font-size: 22px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    p {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 6px;
+    }
+}
+.actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    a {
+        color: var(--primary);
+        font-size: 13px;
+    }
+    button {
+        font-size: 12px;
+    }
+}
+.panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+.filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+.audience {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+    legend {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 0 4px;
+    }
+}
+.preview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--accent);
+    font-size: 12px;
+    ul {
+        padding-left: 16px;
+        overflow-wrap: anywhere;
+    }
+    li {
+        margin-top: 6px;
+    }
+}
+.hint {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+.success {
+    padding: 12px;
+    border-radius: 10px;
+    color: #287363;
+    background: #3f887a15;
+}
+.badge {
+    border-radius: 20px;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 6px 10px;
+    font-size: 12px;
+}
+.secondary {
+    align-self: flex-start;
+    background: var(--accent);
+    color: var(--primary);
+    font-size: 12px;
+}
+.counts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+}
+.recipients {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 10px;
+        overflow-wrap: anywhere;
+    }
+    span,
+    small {
+        color: var(--muted);
+        font-size: 12px;
+    }
+}
+@media (max-width: 700px) {
+    .filters {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .panel {
+        padding: 12px;
+    }
+}

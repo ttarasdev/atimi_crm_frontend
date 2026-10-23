@@ -1,0 +1,359 @@
+.calendar {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.headings,
+.allDay,
+.early,
+.grid {
+    display: grid;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--surface);
+}
+
+.headings {
+    border-bottom: 1px solid var(--line);
+}
+
+.corner {
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 58px;
+    padding: 6px;
+    border: 0;
+    border-left: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+
+    strong {
+        width: 25px;
+        height: 25px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--ink);
+        font-size: 13px;
+    }
+
+    &:hover {
+        background: var(--canvas);
+    }
+}
+
+.today strong {
+    color: var(--surface);
+    background: var(--primary);
+}
+
+.allDay {
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--primary) 3%, var(--surface));
+}
+
+.allDayLabel {
+    padding: 10px 4px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 9px;
+    overflow-wrap: anywhere;
+}
+
+.allDayColumn {
+    min-width: 0;
+    max-height: 130px;
+    overflow-y: auto;
+    padding: 4px;
+    border-left: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.allDayEvent {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    text-align: left;
+    border: 1px solid currentColor;
+    border-radius: 6px;
+    background: color-mix(in srgb, currentColor 6%, var(--surface));
+    padding: 5px;
+    font-size: 10px;
+
+    > span:nth-child(2) {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: var(--ink);
+    }
+
+    > span:first-child,
+    > svg {
+        flex-shrink: 0;
+    }
+}
+
+.addDay {
+    min-height: 20px;
+    border: 0;
+    border-radius: 4px;
+    color: var(--muted);
+    background: transparent;
+
+    &:hover {
+        color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 6%, transparent);
+    }
+}
+
+.early {
+    border-bottom: 1px solid var(--line);
+}
+
+.earlyEntries {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 24px;
+    padding: 4px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--muted);
+    background: var(--canvas);
+    font-size: 10px;
+
+    &:hover {
+        color: var(--primary);
+    }
+}
+
+.scroll {
+    height: min(620px, calc(100dvh - 300px));
+    min-height: 360px;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+}
+
+.grid {
+    height: 992px;
+}
+
+.hours {
+    position: relative;
+    color: var(--muted);
+    font-size: 10px;
+
+    span {
+        position: absolute;
+        right: 5px;
+        margin-top: 4px;
+    }
+}
+
+.column {
+    position: relative;
+    height: 960px;
+    min-width: 0;
+    border-left: 1px solid var(--line);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 59px,
+        var(--line) 59px,
+        var(--line) 60px
+    );
+}
+
+.todayColumn {
+    background-color: color-mix(in srgb, var(--primary) 2%, var(--surface));
+}
+
+.event {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    border: 1px solid currentColor;
+    border-left-width: 3px;
+    border-radius: 7px;
+    padding: 5px;
+    background: color-mix(in srgb, currentColor 6%, var(--surface));
+    overflow: hidden;
+    text-align: left;
+
+    > strong {
+        font-size: 11px;
+        line-height: 1.3;
+        font-weight: 600;
+        color: var(--ink);
+        overflow-wrap: anywhere;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+
+    &:hover {
+        background: color-mix(in srgb, currentColor 12%, var(--surface));
+    }
+}
+
+.eventMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3px;
+    font-size: 9px;
+    line-height: 1.2;
+
+    > span:first-child {
+        flex-shrink: 0;
+    }
+}
+
+.location {
+    color: var(--muted);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.done {
+    opacity: 0.6;
+
+    > strong,
+    > span:nth-child(2) {
+        text-decoration: line-through;
+    }
+}
+
+.marker {
+    position: absolute;
+    z-index: 2;
+    left: 3px;
+    right: 3px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    background: currentColor;
+    text-align: left;
+
+    > span {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        bottom: 1px;
+        max-width: 100%;
+        padding: 3px;
+        border-radius: 4px 4px 0 0;
+        background: var(--surface);
+        font-size: 9px;
+
+        > svg,
+        > strong {
+            flex-shrink: 0;
+        }
+
+        > span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}
+
+.reminder {
+    background: transparent;
+    border-bottom: 1px dashed currentColor;
+}
+
+.earlyMarker > span {
+    bottom: auto;
+    top: 1px;
+    border-radius: 0 0 4px 4px;
+}
+
+.now {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+    inset-inline: 0;
+    height: 1px;
+    background: var(--primary);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -3px;
+        top: -3px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--primary);
+    }
+}
+
+.day {
+    .date {
+        flex-direction: row;
+        min-height: 42px;
+        gap: 8px;
+    }
+
+    .allDayEvent {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    .event {
+        padding: 8px 12px;
+        border-radius: 12px;
+        gap: 5px;
+
+        > strong {
+            font-size: 14px;
+        }
+    }
+
+    .eventMeta {
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .marker > span {
+        gap: 5px;
+        padding: 4px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    .scroll {
+        height: calc(100dvh - 330px);
+        min-height: 330px;
+    }
+}

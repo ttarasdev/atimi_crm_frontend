@@ -1,0 +1,25 @@
+.title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    h2 {
+        color: var(--ink);
+    }
+}
+.toggle {
+    border-color: var(--line);
+    background: var(--surface);
+    color: var(--ink);
+    svg {
+        transition: transform 0.2s;
+    }
+}
+.rotated {
+    transform: rotate(180deg);
+}
+@media (prefers-reduced-motion: reduce) {
+    .toggle svg {
+        transition: none;
+    }
+}

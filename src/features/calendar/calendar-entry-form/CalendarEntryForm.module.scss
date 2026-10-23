@@ -1,0 +1,73 @@
+.checkbox {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--ink);
+    font-size: 13px;
+    cursor: pointer;
+
+    input {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--primary);
+    }
+}
+
+.hint {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid color-mix(in srgb, currentColor 32%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+    font-size: 12px;
+
+    > svg {
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+
+    strong {
+        display: block;
+        margin-bottom: 3px;
+        color: var(--ink);
+        font-weight: 600;
+    }
+
+    p {
+        color: var(--muted);
+        line-height: 1.5;
+    }
+}
+
+.series {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--canvas);
+
+    > p {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 12px;
+    }
+}
+
+.link {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+
+    > svg {
+        flex-shrink: 0;
+    }
+}

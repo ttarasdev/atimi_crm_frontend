@@ -1,0 +1,29 @@
+.avatar {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    overflow: hidden;
+    flex: 0 0 auto;
+    border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+    border-radius: 30%;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+    vertical-align: middle;
+
+    &:has(.image:not([hidden])) .initials {
+        visibility: hidden;
+    }
+}
+
+.initials {
+    font-weight: 600;
+    line-height: 1;
+}
+
+.image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

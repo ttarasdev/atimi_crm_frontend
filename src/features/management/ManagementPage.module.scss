@@ -1,0 +1,98 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    h1 {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--ink);
+        font-size: 24px;
+        font-weight: 650;
+    }
+    p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+        max-width: 680px;
+    }
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 12px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    transition:
+        border-color 150ms,
+        background 150ms;
+    h2 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+    p {
+        flex: 1;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+    &:hover {
+        border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+        background: color-mix(in srgb, var(--primary) 2%, var(--surface));
+    }
+    &:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+    }
+}
+.icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 7%, transparent);
+}
+.open {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 3px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+@media (max-width: 600px) {
+    .page {
+        gap: 20px;
+    }
+    .card {
+        padding: 16px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .card {
+        transition: none;
+    }
+}

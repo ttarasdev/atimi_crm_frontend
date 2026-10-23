@@ -1,0 +1,242 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+}
+
+.heading {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+
+    h3 {
+        color: var(--ink);
+        font-size: 18px;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+}
+
+.type {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.facts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    > div {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 8px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    dt {
+        display: flex;
+        gap: 6px;
+        align-items: flex-start;
+        color: var(--muted);
+
+        svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+    }
+
+    dd {
+        color: var(--ink);
+        overflow-wrap: anywhere;
+    }
+}
+
+.description {
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--canvas);
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.overdue {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--negative);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.done {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    align-self: flex-start;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.unchecked,
+.checked {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+}
+
+.checked {
+    background: var(--primary);
+    color: white;
+}
+
+.snooze {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--canvas);
+    }
+}
+
+.snoozeToggle {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    button {
+        min-height: 30px;
+        padding: 5px 8px;
+        border-radius: 7px;
+        font-size: 12px;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+.action {
+    min-height: 36px;
+    padding: 8px 12px;
+    gap: 6px;
+    border-radius: 8px;
+}
+
+.remove {
+    border-color: color-mix(in srgb, var(--negative) 35%, transparent);
+    background: color-mix(in srgb, var(--negative) 6%, transparent);
+    color: var(--negative);
+
+    &:hover:not(:disabled) {
+        background: color-mix(in srgb, var(--negative) 12%, transparent);
+    }
+}
+
+.error {
+    padding: 8px 10px;
+    border: 1px solid color-mix(in srgb, var(--negative) 25%, transparent);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--negative) 6%, transparent);
+    color: var(--negative);
+    font-size: 12px;
+}
+
+.retry {
+    margin-top: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .facts > div {
+        grid-template-columns: 102px minmax(0, 1fr);
+        font-size: 12px;
+    }
+}
+
+.cardLink {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    p {
+        color: var(--muted);
+    }
+    a {
+        align-self: flex-start;
+        padding: 8px 14px;
+        border-radius: 20px;
+        background: var(--primary);
+        color: #fff;
+        text-decoration: none;
+    }
+}

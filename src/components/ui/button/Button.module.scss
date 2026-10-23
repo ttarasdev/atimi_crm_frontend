@@ -1,0 +1,36 @@
+.button {
+    background: var(--primary);
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 28px;
+    min-height: 38px;
+    padding: 9px 18px;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 13px;
+    transition:
+        background 0.2s,
+        filter 0.2s;
+    &:hover:not(:disabled) {
+        filter: brightness(0.97);
+    }
+}
+.spinner {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .spinner {
+        animation: none;
+    }
+    .button {
+        transition: none;
+    }
+}

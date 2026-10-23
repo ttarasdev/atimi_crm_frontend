@@ -1,0 +1,92 @@
+.card {
+    --payment-color: var(--muted);
+    display: grid;
+    gap: 14px;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid color-mix(in srgb, var(--payment-color) 25%, var(--line));
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--payment-color) 4%, var(--surface));
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink);
+    }
+}
+
+.unpaid {
+    --payment-color: #dc2626;
+}
+
+.partial {
+    --payment-color: #946200;
+    border-color: #f5d77c;
+    background: #fffbeb;
+}
+.paid {
+    --payment-color: #16803d;
+    border-color: #a7e8bd;
+    background: #f0fdf4;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--payment-color);
+    font-size: 13px;
+    line-height: 1.5;
+
+    svg {
+        flex: 0 0 auto;
+    }
+    strong {
+        font-weight: 600;
+    }
+}
+
+.comment,
+.empty {
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.empty {
+    color: var(--muted);
+}
+
+.edit {
+    min-height: 30px;
+    padding: 5px 8px;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.amount {
+    display: grid;
+    gap: 4px;
+    small {
+        color: var(--muted);
+        font-size: 11px;
+    }
+    strong {
+        font-size: 16px;
+        color: var(--ink);
+        overflow-wrap: anywhere;
+    }
+}

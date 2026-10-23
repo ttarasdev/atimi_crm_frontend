@@ -1,0 +1,15 @@
+.remove {
+    align-self: flex-start;
+    min-height: 34px;
+    padding: 8px 12px;
+    color: var(--negative);
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--negative) 20%, transparent);
+    font-size: 11px;
+}
+
+.notice {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}

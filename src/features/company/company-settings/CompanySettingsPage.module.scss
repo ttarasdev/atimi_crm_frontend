@@ -1,0 +1,133 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    h2 {
+        font-size: 19px;
+        letter-spacing: -0.4px;
+    }
+    p {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 4px;
+    }
+}
+.mark {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 14px;
+}
+.columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+.card,
+.summary {
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    min-width: 0;
+}
+.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-top: 3px solid var(--primary);
+    h3 {
+        font-size: 21px;
+        letter-spacing: -0.5px;
+    }
+}
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+    color: var(--primary);
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+    svg {
+        flex-shrink: 0;
+        margin-top: 3px;
+        color: var(--primary);
+    }
+}
+.logo {
+    object-fit: contain;
+    object-position: left center;
+    max-width: 100%;
+}
+.hint {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+.fieldPair {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+}
+.secondary {
+    align-self: flex-start;
+    padding: 6px 10px;
+    background: var(--accent);
+    color: var(--primary);
+    font-size: 11px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+}
+.saved {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #3f887a;
+}
+.state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px 12px;
+    color: var(--muted);
+    font-size: 13px;
+}
+@media (max-width: 850px) {
+    .columns {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 500px) {
+    .fieldPair {
+        grid-template-columns: 1fr;
+    }
+}

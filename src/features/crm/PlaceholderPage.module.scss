@@ -1,0 +1,10 @@
+.page h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+}
+@media (max-width: 800px) {
+    .page h1 {
+        font-size: 26px;
+    }
+}

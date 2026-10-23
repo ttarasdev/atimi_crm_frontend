@@ -1,0 +1,38 @@
+.notice,
+.success p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.success {
+    display: grid;
+    gap: 12px;
+
+    h3 {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    strong {
+        color: var(--ink);
+        font-weight: 500;
+    }
+
+    button {
+        gap: 8px;
+        margin-top: 4px;
+    }
+}
+
+.successIcon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+}

@@ -1,0 +1,165 @@
+.count {
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 12px;
+}
+.filters {
+    display: grid;
+    grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(140px, 1fr));
+    gap: 12px;
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 10px;
+    list-style: none;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    gap: 12px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.15s;
+    &:hover {
+        border-color: var(--primary);
+    }
+    &:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+}
+.cardTop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    > svg {
+        color: var(--muted);
+        flex-shrink: 0;
+    }
+}
+.sourceIcon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+    border-radius: 9px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 5%, transparent);
+    flex-shrink: 0;
+}
+.cardName {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+    strong {
+        font-size: 14px;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+    }
+    span {
+        font-size: 11px;
+        color: var(--muted);
+    }
+}
+.excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+.cardBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    > span:last-child {
+        font-size: 11px;
+        color: var(--muted);
+    }
+}
+.date {
+    font-size: 11px;
+    color: var(--muted);
+}
+.detailHeader {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    strong {
+        font-size: 18px;
+        overflow-wrap: anywhere;
+    }
+}
+.contactLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        font-size: 13px;
+        overflow-wrap: anywhere;
+        text-decoration: none;
+    }
+}
+.message {
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--canvas);
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+}
+@media (max-width: 1050px) {
+    .filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 650px) {
+    .filters {
+        gap: 10px;
+        > div:first-child {
+            grid-column: 1 / -1;
+        }
+    }
+    .card {
+        padding: 12px;
+    }
+}

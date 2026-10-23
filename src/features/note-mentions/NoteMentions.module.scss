@@ -1,0 +1,97 @@
+.mention {
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+    border-radius: 4px;
+    padding: 0 2px;
+    font-weight: 500;
+}
+.editor {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+}
+.picker {
+    display: grid;
+    gap: 8px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px #17203312;
+    p {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+    }
+}
+.pickerTitle {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+.options {
+    display: grid;
+    gap: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    button {
+        text-align: left;
+        color: var(--ink);
+        background: transparent;
+        border: 0;
+        padding: 9px 10px;
+        border-radius: 7px;
+        font: inherit;
+        font-size: 13px;
+        cursor: pointer;
+        &[aria-selected='true'],
+        &:hover,
+        &:focus-visible {
+            background: var(--hover);
+            color: var(--primary);
+        }
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}
+.selected {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--hover);
+        color: var(--primary);
+        border-radius: 20px;
+        padding: 5px 8px;
+        font-size: 12px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+    button {
+        display: grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--surface);
+        color: inherit;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+}
+.target {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    scroll-margin-top: 80px;
+}

@@ -1,0 +1,41 @@
+.hint {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+.roles {
+    display: grid;
+    gap: 8px;
+    label {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 12px;
+        background: var(--surface);
+        cursor: pointer;
+        &:has(input:checked) {
+            border-color: var(--primary);
+            background: color-mix(in srgb, var(--primary) 5%, transparent);
+        }
+    }
+    input {
+        accent-color: var(--primary);
+        width: 16px;
+        height: 16px;
+    }
+    span {
+        display: grid;
+        gap: 4px;
+    }
+    strong {
+        color: var(--ink);
+        font-size: 14px;
+    }
+    small {
+        color: var(--muted);
+        font-size: 11px;
+    }
+}

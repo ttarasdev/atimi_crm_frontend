@@ -1,0 +1,145 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+
+    > label {
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 600;
+    }
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 44px;
+    padding: 5px 10px 5px 5px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid color-mix(in srgb, var(--primary) 25%, transparent);
+        outline-offset: 1px;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid currentColor;
+    border-radius: 7px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.value {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+
+    small {
+        color: var(--muted);
+        font-size: 11px;
+    }
+}
+
+.picker {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--canvas);
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    max-height: 220px;
+    overflow: auto;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px;
+    min-height: 50px;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+    font: inherit;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+
+    > span {
+        flex: 1;
+        min-width: 0;
+        color: var(--ink);
+        overflow-wrap: anywhere;
+    }
+
+    small {
+        display: block;
+        margin-top: 2px;
+        color: var(--muted);
+        font-size: 10px;
+    }
+
+    &[aria-pressed='true'] {
+        box-shadow: inset 0 0 0 1px currentColor;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 1px;
+    }
+}
+
+.more {
+    min-height: 32px;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.error {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--negative);
+    font-size: 12px;
+
+    button {
+        border: 0;
+        background: transparent;
+        color: var(--primary);
+        font: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

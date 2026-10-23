@@ -1,0 +1,37 @@
+.card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+
+    h2 {
+        padding: 16px 16px 0;
+        color: var(--ink);
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.hint,
+.state,
+.error {
+    padding: 0 16px 14px;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.hint {
+    color: var(--muted);
+}
+
+.state {
+    color: var(--primary);
+}
+
+.error {
+    display: grid;
+    gap: 10px;
+    color: var(--negative);
+}

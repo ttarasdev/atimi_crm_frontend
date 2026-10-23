@@ -1,0 +1,21 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+
+    p {
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    [role='alert'] {
+        display: grid;
+        gap: 6px;
+
+        p {
+            color: var(--negative);
+        }
+    }
+}

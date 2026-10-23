@@ -1,0 +1,108 @@
+.field {
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+}
+.trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--primary);
+    cursor: pointer;
+    span {
+        flex: 1;
+        text-align: left;
+    }
+    b {
+        border-radius: 6px;
+        padding: 2px 6px;
+        background: color-mix(in srgb, var(--primary) 8%, transparent);
+    }
+}
+.selection {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    span {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        background: var(--canvas);
+        padding: 4px 6px;
+        border-radius: 6px;
+        font-size: 12px;
+        color: var(--muted);
+    }
+    button {
+        border: 0;
+        background: transparent;
+        color: inherit;
+        padding: 2px;
+        cursor: pointer;
+    }
+
+    strong {
+        max-width: 220px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+}
+.library {
+    display: grid;
+    gap: 10px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px;
+    p,
+    small {
+        color: var(--muted);
+        font-size: 12px;
+    }
+}
+.rows {
+    display: grid;
+    gap: 6px;
+    max-height: 260px;
+    overflow-y: auto;
+}
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--surface);
+    color: var(--primary);
+    cursor: pointer;
+    span {
+        min-width: 0;
+        flex: 1;
+        display: grid;
+        gap: 3px;
+    }
+    strong {
+        color: var(--ink);
+        overflow-wrap: anywhere;
+        font-size: 13px;
+    }
+    small {
+        font-size: 11px;
+    }
+    &[aria-pressed='true'] {
+        border-color: var(--primary);
+        background: color-mix(in srgb, var(--primary) 5%, transparent);
+    }
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+}

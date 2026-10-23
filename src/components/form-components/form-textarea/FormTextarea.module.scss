@@ -1,0 +1,42 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+
+    label {
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+
+.input {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+
+    &:focus-visible {
+        outline: 2px solid color-mix(in srgb, var(--primary) 25%, transparent);
+        outline-offset: 1px;
+        border-color: var(--primary);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.hint {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+}

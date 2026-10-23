@@ -1,0 +1,13 @@
+.hint,
+.warning {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.hint {
+    color: var(--muted);
+}
+
+.warning {
+    color: var(--negative);
+}

@@ -1,0 +1,245 @@
+.details,
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    background: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+.stageIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+.summaryText {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+    color: var(--ink);
+
+    strong {
+        font-size: 14px;
+        font-weight: 600;
+        overflow-wrap: anywhere;
+    }
+
+    span {
+        color: var(--muted);
+        font-size: 11px;
+    }
+}
+
+.description {
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.tasks {
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+.header,
+.title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.header {
+    justify-content: space-between;
+}
+
+.title {
+    h3 {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.count {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.add {
+    min-height: 32px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 8px;
+    border: 1px solid color-mix(in srgb, currentColor 55%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, currentColor 5%, transparent);
+    min-width: 0;
+}
+
+.taskBody {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.taskIcon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.taskText {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    color: var(--ink);
+    overflow-wrap: anywhere;
+
+    strong {
+        font-size: 13px;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    span,
+    p {
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+    p {
+        white-space: pre-wrap;
+    }
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.action {
+    width: 30px;
+    min-height: 30px;
+    padding: 6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    color: var(--muted);
+    background: transparent;
+
+    &:hover:not(:disabled) {
+        background: color-mix(in srgb, var(--primary) 8%, transparent);
+        color: var(--primary);
+    }
+}
+
+.state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 64px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    color: var(--negative);
+    text-align: center;
+    font-size: 12px;
+}
+
+.error button,
+.more button {
+    min-height: 34px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.more {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.confirmation {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.actionError {
+    padding-top: 8px;
+    font-size: 12px;
+    color: var(--negative);
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spinner {
+        animation: none;
+    }
+}

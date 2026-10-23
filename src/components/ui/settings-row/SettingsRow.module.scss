@@ -1,0 +1,82 @@
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    min-height: 66px;
+    color: var(--ink);
+    text-decoration: none;
+
+    & + & {
+        border-top: 1px solid var(--line);
+    }
+}
+
+.link {
+    transition: background 0.2s;
+
+    &:hover {
+        background: color-mix(in srgb, var(--primary) 4%, var(--surface));
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: -3px;
+        border-radius: 12px;
+    }
+}
+
+.button {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font: inherit;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: wait;
+    }
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
+    border-radius: 10px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 5%, transparent);
+    flex: 0 0 auto;
+}
+
+.content {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+
+    strong {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    span {
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+}
+
+.arrow {
+    color: var(--muted);
+    flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .link {
+        transition: none;
+    }
+}

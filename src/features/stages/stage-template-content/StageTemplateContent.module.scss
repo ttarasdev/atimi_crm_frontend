@@ -1,0 +1,148 @@
+.content,
+.section,
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.section {
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    h3 {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    small {
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 400;
+    }
+}
+
+.add {
+    min-height: 30px;
+    padding: 5px 8px;
+    gap: 4px;
+    border-radius: 16px;
+    color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+    font-size: 12px;
+}
+
+.hint,
+.state {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+.state {
+    padding: 12px 0;
+    text-align: center;
+}
+
+.note {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    min-width: 0;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: var(--canvas);
+
+    p {
+        flex: 1;
+        min-width: 0;
+        font-size: 12px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}
+
+.document {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.fileIcon {
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+.documentText {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+
+    strong {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    small {
+        font-size: 11px;
+        color: var(--muted);
+    }
+}
+
+.download {
+    position: relative;
+    flex-shrink: 0;
+
+    span {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 2;
+        width: 180px;
+        max-width: 180px;
+        padding: 6px;
+        border-radius: 6px;
+        background: var(--surface);
+        color: var(--negative);
+        font-size: 11px;
+    }
+}
+
+.downloadButton {
+    width: 28px;
+    min-height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    color: var(--primary);
+    background: transparent;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    color: var(--negative);
+    font-size: 12px;
+    text-align: center;
+}

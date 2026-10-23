@@ -1,0 +1,64 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toggle {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font: inherit;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--canvas);
+}
+
+.more {
+    align-self: flex-start;
+    min-height: 30px;
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.error {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: var(--negative);
+    font-size: 12px;
+
+    button {
+        border: 0;
+        background: transparent;
+        color: var(--primary);
+        font: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

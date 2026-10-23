@@ -1,0 +1,46 @@
+.switch {
+    width: 42px;
+    height: 24px;
+    padding: 3px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--line);
+    flex: 0 0 auto;
+    transition: background 0.2s;
+
+    &:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+    }
+
+    &:disabled {
+        cursor: wait;
+        opacity: 0.65;
+    }
+}
+
+.thumb {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--surface);
+    box-shadow: 0 1px 3px rgb(23 44 69 / 15%);
+    transition: transform 0.2s;
+}
+
+.checked {
+    background: var(--primary);
+    border-color: var(--primary);
+
+    .thumb {
+        transform: translateX(18px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .switch,
+    .thumb {
+        transition: none;
+    }
+}

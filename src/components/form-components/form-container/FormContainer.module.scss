@@ -1,0 +1,24 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    border: 0;
+}
+
+.error {
+    padding: 8px 10px;
+    border: 1px solid color-mix(in srgb, var(--negative) 25%, transparent);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--negative) 6%, transparent);
+    color: var(--negative);
+    font-size: 13px;
+}
